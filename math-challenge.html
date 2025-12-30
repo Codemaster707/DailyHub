@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyHub | Math Challenge</title>
+  <link rel="stylesheet" href="math-challenge.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-logo">DailyHub</div>
+  <nav class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="smarttasks.html">Smart Tasks</a>
+    <a href="utilities.html">Utilities</a>
+    <a href="learn-play.html">🎯 Play & Learn</a>
+    <span class="active">➕ Math Challenge</span>
+  </nav>
+</header>
+
+<div class="main-layout">
+  <aside class="side-nav">
+    <div class="side-header">Arcade Menu</div>
+    <nav class="side-links">
+      <a href="trivia.html" class="side-item">🔥 Trivia Quest</a>
+      <a href="word-scramble.html" class="side-item">🔠 Word Scramble</a>
+      <a href="math-challenge.html" class="side-item active">➕ Math Challenge</a>
+      <a href="memory-game.html" class="side-item">🧠 Memory Match</a>
+      <a href="hangman.html" class="side-item">😵 Hangman</a>
+      <a href="tic-tac-toe.html" class="side-item">⭕ Tic Tac Toe</a>
+    </nav>
+  </aside>
+
+  <main class="quiz-content">
+    <section id="level-section" class="level-selection">
+      <h1>Math Challenge ➕</h1>
+      <p>Solve the equations as fast as you can to earn points!</p>
+      
+      <div class="levels-grid">
+        <div class="level-card" onclick="startGame('easy')">
+          <h2>🟢 Easy</h2>
+          <p>Simple Add/Sub • 5 Tries<br>10 Points per correct</p>
+          <button class="start-btn">Start Easy</button>
+        </div>
+        <div class="level-card" onclick="startGame('medium')">
+          <h2>🟡 Medium</h2>
+          <p>Multiplication • 3 Tries<br>50 Points per correct</p>
+          <button class="start-btn">Start Medium</button>
+        </div>
+        <div class="level-card" onclick="startGame('hard')">
+          <h2>🔴 Hard</h2>
+          <p>Mixed/Division • 1 Try<br>100 Points per correct</p>
+          <button class="start-btn">Start Hard</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="quiz-section" style="display:none;">
+      <div class="quiz-card">
+        <div class="card-meta">
+          <span id="score-pill">🏆 Score: 0</span>
+          <div class="timer-pill" id="lives-pill">Lives: ❤️❤️❤️❤️❤️</div>
+        </div>
+        
+        <h1 id="question" class="math-text">-- + --</h1>
+        
+        <input type="number" id="answer" placeholder="Enter number..." autocomplete="off" />
+        
+        <div class="actions">
+          <button id="submitBtn" class="start-btn" style="width:100%">Submit Answer</button>
+        </div>
+        <p id="message" style="margin-top:20px; font-weight:700; font-size:1.2rem;"></p>
+        <button onclick="location.reload()" style="background:none; border:none; color:rgba(255,255,255,0.5); cursor:pointer; margin-top:15px;">← Change Difficulty</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="math-challenge.js"></script>
+</body>
+</html>

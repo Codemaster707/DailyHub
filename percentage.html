@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percentage Wizard | DailyHub</title>
+  <link rel="stylesheet" href="percentage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-logo">Daily<span class="hub-text">Hub</span></div>
+  <nav class="top-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="smarttasks.html">Smart Tasks</a>
+    <a href="utilities.html">Utilities</a>
+    <a href="learn-play.html">Play & learn</a>
+    <span class="active">Percentage</span>
+  </nav>
+</header>
+
+<div class="main-wrapper">
+  <aside class="side-bar">
+    <div class="side-section-title">UTILITIES</div>
+    <nav class="side-nav-list">
+      <a href="calculator.html"><i class="fas fa-calculator icon-calc"></i> Calculator</a>
+      <a href="notes.html"><i class="fas fa-sticky-note icon-notes"></i> Notes</a>
+      <a href="focus-timer.html"><i class="fas fa-stopwatch icon-timer"></i> Focus Timer</a>
+      <a href="percentage.html" class="active"><i class="fas fa-percent icon-percent"></i> Percentage</a>
+      <a href="personality-tracker.html"><i class="fas fa-brain icon-personality"></i> Personality Tracker</a>
+      <a href="universal-calculator.html">📲 Universal calculator</a>
+    </nav>
+  </aside>
+
+  <main class="content-area">
+    <div class="calc-container">
+      <div class="header-group">
+        <h1 class="vibrant-title">Percentage <span class="accent">Wizard</span></h1>
+        <p>Instant math for growth, marks, and finance.</p>
+      </div>
+
+      <div class="calculator-card">
+        <div class="input-block">
+          <label class="field-label">What do you want to calculate?</label>
+          <select id="mode" class="custom-select" onchange="updateInputs()">
+            <option value="percentOf">X% of Y (Find Value)</option>
+            <option value="whatPercent">What % is X of Y?</option>
+            <option value="increase">Percentage Increase (+)</option>
+            <option value="decrease">Percentage Decrease (-)</option>
+            <option value="change">Percentage Change (A to B)</option>
+            <option value="marks">Exam Marks Percentage</option>
+          </select>
+        </div>
+
+        <div id="inputs" class="dynamic-inputs">
+          </div>
+
+        <div id="result-box" class="result-display hidden">
+          <div class="result-content">
+            <small id="result-label">RESULT</small>
+            <h2 id="result-text">0.00</h2>
+          </div>
+          <button class="copy-button" onclick="copyResult()">
+            <i class="far fa-copy"></i> Copy
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="percentage.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DailyHub – Timetable</title>
+<link rel="stylesheet" href="timetable.css">
+</head>
+<body>
+
+<!-- Top Navbar -->
+<header class="top-nav">
+    <div class="nav-logo">DailyHub</div>
+    <nav class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <span class="active">Timetable</span>
+        <a href="smarttasks.html">Smart Tasks</a>
+        <a href="utilities.html">Utilities</a>
+        <a href="learn-play.html">Play & Learn</a>
+    </nav>
+</header>
+
+<main class="main-content">
+
+    <!-- Timetable Header -->
+    <section class="welcome">
+        <h2>Today's Plan</h2>
+        <p>Organize your tasks by time for better focus.</p>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stat-card">
+            <h3>📅 Today</h3>
+            <p id="todayDate"></p>
+        </div>
+        <div class="stat-card">
+            <h3>✅ Tasks</h3>
+            <p id="taskCount">0</p>
+        </div>
+    </section>
+
+    <!-- Timetable Section -->
+    <section class="todo-section">
+        <h2>TimeTable</h2>
+
+        <div class="todo-input">
+            <input type="time" id="taskTime">
+            <select id="taskPeriod">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+            <input type="text" id="taskInput" placeholder="Enter your task">
+            <button id="addTask">Add</button>
+        </div>
+
+        <div class="table-head">
+            <span>Time</span>
+            <span>Task</span>
+            <span>Action</span>
+        </div>
+
+        <ul id="taskList"></ul>
+    </section>
+
+</main>
+
+<script src="timetable.js"></script>
+</body>
+</html>

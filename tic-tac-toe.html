@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyHub | Tic Tac Toe</title>
+  <link rel="stylesheet" href="tic-tac-toe.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-logo">DailyHub</div>
+  <nav class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="smarttasks.html">Smart Tasks</a>
+    <a href="utilities.html">Utilities</a>
+    <a href="learn-play.html">🎯 Play & Learn</a>
+    <span class="active">⭕ Tic Tac Toe</span>
+  </nav>
+</header>
+
+<div class="main-layout">
+  <aside class="side-nav">
+    <div class="side-header">Arcade Menu</div>
+    <nav class="side-links">
+      <a href="trivia.html" class="side-item">🔥 Trivia Quest</a>
+      <a href="word-scramble.html" class="side-item">🔠 Word Scramble</a>
+      <a href="math-challenge.html" class="side-item">➕ Math Challenge</a>
+      <a href="memory-game.html" class="side-item">🧠 Memory Match</a>
+      <a href="hangman.html" class="side-item">😵 Hangman</a>
+      <a href="tic-tac-toe.html" class="side-item active">⭕ Tic Tac Toe</a>
+    </nav>
+  </aside>
+
+  <main class="quiz-content">
+    <section id="level-section" class="level-selection">
+      <h1>Tic Tac Toe ⭕</h1>
+      <p>Choose your rank and conquer the board!</p>
+      
+      <div class="levels-grid">
+        <div class="level-card" onclick="startTicTacToe('friend')">
+          <h2>👥 vs Friend</h2>
+          <p>Local Multiplayer Battle</p>
+          <button class="start-btn">Start Match</button>
+        </div>
+        <div class="level-card" onclick="startTicTacToe('easy')">
+          <h2>🟢 AI Easy</h2>
+          <p>Beginner Rank</p>
+          <button class="start-btn">Battle CPU</button>
+        </div>
+        <div class="level-card" onclick="startTicTacToe('medium')">
+          <h2>🟡 AI Medium</h2>
+          <p>Advanced Rank</p>
+          <button class="start-btn">Battle CPU</button>
+        </div>
+        <div class="level-card" onclick="startTicTacToe('hard')">
+          <h2>🔴 AI God Mode</h2>
+          <p>Unbeatable Legend</p>
+          <button class="start-btn">Battle CPU</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="quiz-section" style="display:none;">
+      <div class="quiz-card">
+        <div class="card-meta">
+          <span id="player-id-pill" class="timer-pill">You: ?</span>
+          <span id="turn-indicator">X's Turn</span>
+        </div>
+        
+        <div class="ttt-grid" id="ttt-grid">
+          <div class="cell" data-index="0"></div>
+          <div class="cell" data-index="1"></div>
+          <div class="cell" data-index="2"></div>
+          <div class="cell" data-index="3"></div>
+          <div class="cell" data-index="4"></div>
+          <div class="cell" data-index="5"></div>
+          <div class="cell" data-index="6"></div>
+          <div class="cell" data-index="7"></div>
+          <div class="cell" data-index="8"></div>
+        </div>
+
+        <div class="game-controls">
+            <button onclick="resetGame()" class="start-btn" style="background: var(--purple);">🔄 Restart</button>
+            <button onclick="location.reload()" class="start-btn" style="background: rgba(255,255,255,0.1); border: 1px solid white;">🏠 Menu</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="tic-tac-toe.js"></script>
+</body>
+</html>

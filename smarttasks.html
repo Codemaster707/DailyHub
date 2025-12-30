@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Tasks – DailyHub</title>
+<link rel="stylesheet" href="smarttasks.css">
+</head>
+<body>
+
+<!-- Top Navbar -->
+<header class="top-nav">
+    <div class="nav-logo">DailyHub</div>
+    <nav class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="timetable.html">🕒 Timetable</a>
+        <span class="active">Smart Tasks</span>
+        <a href="utilities.html">Utilities</a>
+        <a href="learn-play.html">Play & Learn</a>
+    </nav>
+</header>
+
+<main class="main-content">
+
+    <!-- Page Heading + Stats -->
+    <section class="page-heading">
+        <h1>🔔 Smart Tasks</h1>
+        <p>Important tasks with reminders so you never forget.</p>
+    </section>
+
+    <section class="stats">
+        <div class="stat-card">
+            <h3>📅 Today</h3>
+            <p id="todayDate"></p>
+        </div>
+        <div class="stat-card">
+            <h3>✅ Total Tasks</h3>
+            <p id="taskCount">0</p>
+        </div>
+        <div class="stat-card">
+            <h3>✔ Completed</h3>
+            <p id="completedCount">0</p>
+        </div>
+    </section>
+
+    <!-- Task Input -->
+    <section class="task-input-section">
+
+        <div class="input-group">
+            <label for="taskText">Task</label>
+            <input type="text" id="taskText" placeholder="Enter your task">
+        </div>
+
+        <div class="input-group">
+            <label for="taskTime">Reminder Time</label>
+            <input type="time" id="taskTime">
+        </div>
+
+        <div class="input-group">
+            <label for="taskPriority">Priority</label>
+            <select id="taskPriority">
+                <option value="High">High</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+
+        <button id="addTask">Add Task</button>
+    </section>
+
+    <!-- Tasks Grid -->
+    <section class="tasks-grid" id="taskList"></section>
+
+    <!-- Smart Tasks Recommendations / Tips -->
+    <section class="side-info">
+        <h4>Tips for Smart Tasks</h4>
+        <ul>
+            <li>Focus on the most important tasks first.</li>
+            <li>Set reminders only for crucial tasks.</li>
+            <li>Mark tasks as done when completed.</li>
+            <li>Review your tasks at the end of the day.</li>
+        </ul>
+    </section>
+
+</main>
+
+<!-- Reminder Popup -->
+<div id="reminderPopup" class="reminder-popup">
+    <p id="reminderText"></p>
+    <button id="closeReminder">Dismiss</button>
+</div>
+
+<audio id="reminderSound" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" preload="auto"></audio>
+
+<script src="smarttasks.js"></script>
+</body>
+</html>

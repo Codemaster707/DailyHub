@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --secondary: #10b981; /* Green for Create Account */
+    --bg: #030712;
+    --card: rgba(17, 24, 39, 0.6);
+    --border: rgba(255, 255, 255, 0.08);
+    --text-muted: #9ca3af;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+/* Enhanced Animated Background */
+.glow-bg {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    filter: blur(100px);
+    z-index: -1;
+    animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate {
+    from { transform: translate(-10%, -10%) rotate(0deg); }
+    to { transform: translate(10%, 10%) rotate(360deg); }
+}
+
+.auth-card {
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 32px;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Typography & Brand */
+.brand { margin-bottom: 32px; }
+.logo-icon {
+    font-size: 48px;
+    background: linear-gradient(135deg, #818cf8, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+h1 { font-size: 32px; font-weight: 800; letter-spacing: -1.5px; margin: 0; }
+p { color: var(--text-muted); font-size: 15px; margin-top: 4px; }
+
+/* Selection Buttons */
+.choice-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.choice-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin: 0 10px;
+}
+
+/* Forms & Inputs */
+.hidden { display: none !important; }
+
+.input-field {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.input-field i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.input-stack input {
+    width: 100%;
+    padding: 14px 14px 14px 42px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: #fff;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.input-stack input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(0,0,0,0.5);
+}
+
+/* Buttons */
+.main-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+.login-btn {
+    background: var(--primary);
+    color: white;
+    margin-top: 10px;
+}
+
+.login-btn:hover { background: var(--primary-hover); }
+
+/* Highlighted Create Account Button */
+.signup-btn {
+    background: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.signup-btn:hover {
+    background: var(--secondary);
+    color: white;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 16px;
+    transition: 0.2s;
+}
+
+.back-btn:hover { color: #fff; }
+
+/* Animations */
+.slide-up { animation: slideUp 0.4s ease-out; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#msg { color: #f87171;font-size: 13px; margin-top: 15px; min-height: 18px; }

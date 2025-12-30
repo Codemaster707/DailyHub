@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Trivia Quiz – DailyHub</title>
+  <link rel="stylesheet" href="trivia.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-logo">DailyHub</div>
+  <nav class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="smarttasks.html">Smart Tasks</a>
+    <a href="utilities.html">Utilities</a>
+    <a href="learn-play.html">🎯 Play & Learn</a>
+    <span class="active">🔥 Daily Trivia</span>
+  </nav>
+</header>
+
+<div class="main-layout">
+  <aside class="side-nav">
+    <div class="side-header">Arcade Menu</div>
+    <nav class="side-links">
+      <a href="trivia.html" class="side-item active">🔥 Trivia Quest</a>
+      <a href="word-scramble.html" class="side-item">🔠 Word Scramble</a>
+      <a href="math-challenge.html" class="side-item">➕ Math Challenge</a>
+      <a href="memory-game.html" class="side-item">🧠 Memory Match</a>
+      <a href="hangman.html" class="side-item">😵 Hangman</a>
+      <a href="tic-tac-toe.html" class="side-item">⭕ Tic Tac Toe</a>
+    </nav>
+  </aside>
+
+  <main class="quiz-content">
+
+    <!-- LEVEL SELECTION -->
+    <section id="level-section" class="level-selection">
+      <h1>Choose Your Challenge 🔥</h1>
+      <p>Select difficulty to begin your trivia quest</p>
+      
+      <div class="levels-grid">
+        <div class="level-card" data-level="easy">
+          <h2>🟢 Easy</h2>
+          <p>20 seconds per question<br>General knowledge & fun facts</p>
+          <button class="start-btn">Start Easy</button>
+        </div>
+        <div class="level-card" data-level="medium">
+          <h2>🟡 Medium</h2>
+          <p>15 seconds per question<br>Science, History, Geography + more</p>
+          <button class="start-btn">Start Medium</button>
+        </div>
+        <div class="level-card" data-level="hard">
+          <h2>🔴 Hard</h2>
+          <p>10 seconds only<br>Tough questions from elite categories</p>
+          <button class="start-btn">Start Hard</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <div id="quiz-section" style="display:none;">
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-fill"></div>
+      </div>
+
+      <div id="quiz-card" class="quiz-card">
+        <div class="card-meta">
+          <span id="q-count">Challenge 1/10</span>
+          <div class="timer-pill">⏱️ <span id="time">15</span>s</div>
+        </div>
+        
+        <h2 id="question">Loading your challenge...</h2>
+        <div id="options" class="options-grid"></div>
+      </div>
+
+      <section id="result-section" class="result-card" style="display:none;">
+        <h1>🎊 Quest Complete!</h1>
+        <p id="level-display"></p>
+        <p id="score-display"></p>
+        <button id="restartBtn">Play Again 🔥</button>
+      </section>
+    </div>
+
+  </main>
+</div>
+
+<script src="trivia.js"></script>
+</body>
+</html>

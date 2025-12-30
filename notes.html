@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DailyHub – Notes</title>
+<link rel="stylesheet" href="notes.css">
+</head>
+<body>
+
+<header class="top-nav">
+    <div class="nav-logo">DailyHub</div>
+    <nav class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="timetable.html">Timetable</a>
+        <a href="smarttasks.html">Smart Tasks</a>
+        <span class="active">Notes</span>
+        <a href="utilities.html">Utilities</a>
+	<a href="learn-play.html">Play & learn</a>
+    </nav>
+</header>
+
+<div class="utilities-layout">
+    <aside class="side-nav">
+        <h3>Utilities</h3>
+        <a href="calculator.html">🧮 Calculator</a>
+        <a href="notes.html" class="active">📝 Notes</a>
+        <a href="focus-timer.html">⏱ Focus Timer</a>
+	<a href="percentage.html">📊 Percentage</a>
+        <a href="personality-tracker.html">🧩 Personality Tracker</a>
+        <a href="universal-calculator.html">📲 Universal calculator</a>
+
+    </aside>
+
+    <main class="main-content">
+        <section class="welcome">
+            <h2>Smart Notes</h2>
+            <p>Mini document editor – style everything.</p>
+        </section>
+
+        <div class="notes-tabs">
+            <button id="writeTab" class="active" onclick="showTab('write')">✏️ Write Note</button>
+            <button id="savedTab" onclick="showTab('saved')">💾 Saved Notes</button>
+        </div>
+
+        <div id="writeSection">
+            <div class="toolbar">
+                <select id="fontFamily">
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Poppins">Poppins</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Comic Sans MS">Comic Sans</option>
+                    <option value="Trebuchet MS">Trebuchet</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Lucida Console">Lucida</option>
+                </select>
+
+                <select id="fontSize">
+                    <option value="14">14px</option>
+                    <option value="16" selected>16px</option>
+                    <option value="18">18px</option>
+                    <option value="22">22px</option>
+                    <option value="26">26px</option>
+                    <option value="32">32px</option>
+                    <option value="40">40px</option>
+                </select>
+
+                <div class="color-bar">
+                    <button style="background:#e53935" onclick="setColor('#e53935')"></button>
+                    <button style="background:#1e88e5" onclick="setColor('#1e88e5')"></button>
+                    <button style="background:#43a047" onclick="setColor('#43a047')"></button>
+                    <button style="background:#fdd835" onclick="setColor('#fdd835')"></button>
+                    <button style="background:#8e24aa" onclick="setColor('#8e24aa')"></button>
+                    <input type="color" onchange="setColor(this.value)">
+                </div>
+
+                <button onclick="cmd('bold')"><b>B</b></button>
+                <button onclick="cmd('italic')"><i>I</i></button>
+                <button onclick="cmd('underline')"><u>U</u></button>
+            </div>
+
+            <div id="noteTitle" class="title-editor" contenteditable="true" data-placeholder="Note Title"></div>
+            <div id="editor" contenteditable="true" class="editor" data-placeholder="Start writing here..."></div>
+            <button class="save-btn" onclick="saveNote()">Save Note</button>
+
+            <div class="backup-buttons">
+                <button onclick="exportNotes()">💾 Export Notes</button>
+                <input type="file" id="importFile" accept=".json" style="display:none" onchange="importNotes(event)">
+                <button onclick="document.getElementById('importFile').click()">📂 Import Notes</button>
+            </div>
+        </div>
+
+        <div id="savedSection" style="display:none;">
+            <section id="notesList" class="notes-list"></section>
+        </div>
+
+        <script src="notes.js"></script>
+    </main>
+</div>
+</body>
+</html>

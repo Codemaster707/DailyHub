@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DailyHub – One Hub for Daily Life</title>
+
+    <!-- ✅ MOBILE FIX -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">DailyHub</div>
+    <nav>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#get-started" class="btn" id="getStartedNav">Get Started</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Organize Your Day.<br>Save Time. Stay Ahead.</h1>
+    <p>DailyHub brings tasks, reminders, info, and fun learning into one smart dashboard.</p>
+    <button class="primary-btn" id="startDayBtn">Start Your Day</button>
+</section>
+
+<section class="problems" id="about">
+    <h2>Why DailyHub?</h2>
+    <div class="problem-grid">
+        <div class="card">Too many apps for daily tasks</div>
+        <div class="card">Wasting time searching for info</div>
+        <div class="card">Productivity feels boring</div>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <h2>What You Get</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>📝 Tasks & Reminders</h3>
+            <p>Manage your day with simple checklists.</p>
+        </div>
+        <div class="feature-card">
+            <h3>⚡ Quick Utilities</h3>
+            <p>Small tools that save big time.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🎯 Learn & Play</h3>
+            <p>Quizzes and challenges that sharpen your mind.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta" id="get-started">
+    <h2>Your Day Deserves One Hub</h2>
+    <button class="secondary-btn" id="joinBtn">Join DailyHub</button>
+</section>
+
+<!-- 🔁 Button routing -->
+<script>
+  document.getElementById("startDayBtn").onclick = () => {
+    window.location.href = "login.html";
+  };
+
+  document.getElementById("joinBtn").onclick = () => {
+    window.location.href = "login.html";
+  };
+
+  document.getElementById("getStartedNav").onclick = (e) => {
+    e.preventDefault();
+    window.location.href = "login.html";
+  };
+</script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from 
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBxUwx13V37k1wLZstt_-8DnbAsq5SlTeE",
+  authDomain: "dailyhub-d16c8.firebaseapp.com",
+  projectId: "dailyhub-d16c8",
+  storageBucket: "dailyhub-d16c8.firebasestorage.app",
+  messagingSenderId: "430767248900",
+  appId: "1:430767248900:web:c334a52d3ed147711dc751"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // logged-in users skip homepage
+    window.location.replace("dashboard.html");
+  }
+});
+</script>
+</body>
+</html>

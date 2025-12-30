@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator – DailyHub</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+
+<header class="top-nav">
+    <div class="nav-logo">DailyHub</div>
+    <nav class="top-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="timetable.html">Timetable</a>
+        <a href="smarttasks.html">Smart Tasks</a>
+        <a href="utilities.html">Utilities</a>
+        <a href="learn-play.html">Play & learn</a>
+        <span class="active">Calculator</span>
+    </nav>
+</header>
+
+<div class="calc-layout">
+    <aside class="side-nav">
+        <h3>Utilities</h3>
+        <a href="calculator.html" class="active">🧮 Calculator</a>
+        <a href="notes.html">📝 Notes</a>
+        <a href="focus-timer.html">⏱ Focus Timer</a>
+        <a href="percentage.html">📊 Percentage</a>
+        <a href="personality-tracker.html">🧩 Personality Tracker</a>
+        <a href="universal-calculator.html">📲 Universal calculator</a>
+    </aside>
+
+    <main class="calculator-container">
+        <div class="calculator">
+            <input type="text" id="display" readonly placeholder="0">
+
+            <button id="toggle-adv" class="adv-toggle-btn">Scientific Mode ▾</button>
+
+            <div id="advanced-panel" class="advanced-grid">
+                <button class="advanced" data-func="Math.sin(">sin</button>
+                <button class="advanced" data-func="Math.cos(">cos</button>
+                <button class="advanced" data-func="Math.sqrt(">√</button>
+                <button class="advanced" data-func="**">xʸ</button>
+                <button class="advanced" data-func="Math.PI">π</button>
+                <button class="advanced" data-func="Math.log(">ln</button>
+            </div>
+
+            <div class="buttons">
+                <button class="clear">C</button>
+                <button class="delete">⌫</button>
+                <button class="operator">÷</button>
+                <button class="operator">×</button>
+
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="operator">−</button>
+
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="operator">+</button>
+
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="equals">=</button>
+
+                <button class="zero">0</button>
+                <button>.</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="calculator.js"></script>
+</body>
+</html>

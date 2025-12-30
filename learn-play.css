@@ -1,0 +1,402 @@
+/* ===== GENERAL ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f8fc;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== TOP NAV ===== */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #fff; /* clean white topbar */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.top-nav .nav-logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #4f46e5;
+}
+
+.top-nav .nav-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.top-nav .nav-links a,
+.top-nav .nav-links span {
+    margin-left: 0;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background 0.3s;
+    color: #000; /* normal links black */
+}
+
+.top-nav .nav-links a:hover {
+    background: #f0f0f0;
+}
+
+.top-nav .nav-links .active {
+    background: #4f46e5;
+    color: #fff;
+}
+
+/* ===== LAYOUT ===== */
+.layout {
+    padding: 25px;
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding: 25px 15px;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    border-radius: 16px;
+    color: #fff;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+}
+
+.hero p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* ===== GAMES GRID ===== */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* ===== GAME CARD ===== */
+.game-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-card h3 {
+    margin: 0 0 10px 0;
+    color: #4f46e5;
+}
+
+.game-card p {
+    margin: 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* ===== COMING SOON CARD ===== */
+.game-card.coming {
+    background: #f0f0f0;
+    color: #999;
+}
+
+.game-card.coming h3 {
+    color: #999;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .games-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .game-card {
+        padding: 15px;
+    }
+
+    .game-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .game-card p {
+        font-size: 0.85rem;
+    }
+
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .top-nav .nav-links {
+        width: 100%;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .top-nav .nav-links a,
+    .top-nav .nav-links span {
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 8px 10px;
+    }
+}
+/* ===== TOP NAV ===== */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: linear-gradient(90deg, #4f46e5, #6366f1);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.top-nav:hover {
+    background: linear-gradient(90deg, #6366f1, #4f46e5);
+}
+
+.top-nav .nav-logo {
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.top-nav .nav-links a,
+.top-nav .nav-links span {
+    margin-left: 20px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #000; /* Black text as you requested */
+    position: relative;
+}
+
+.top-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.top-nav .nav-links a:hover::after {
+    width: 100%;
+}
+
+.top-nav .nav-links a:hover {
+    color: #fff;
+}
+
+.top-nav .nav-links .active {
+    background: #fff;
+    color: #4f46e5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== RESPONSIVE NAV ===== */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 20px;
+    }
+    .top-nav .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+    }
+}
+/* ===== TOP NAV ===== */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #000; /* Black navbar */
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.top-nav .nav-logo {
+    font-weight: 800;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.top-nav .nav-links a,
+.top-nav .nav-links span {
+    margin-left: 20px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    color: #fff; /* Links are white */
+    position: relative;
+}
+
+.top-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #4f46e5; /* underline color */
+    transition: width 0.3s ease;
+}
+
+.top-nav .nav-links a:hover::after {
+    width: 100%;
+}
+
+.top-nav .nav-links a:hover {
+    color: #4f46e5; /* link hover color */
+}
+
+.top-nav .nav-links .active {
+    background: #4f46e5; /* active background */
+    color: #fff; /* active text color */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== RESPONSIVE NAV ===== */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 20px;
+    }
+    .top-nav .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+    }
+}
+/* ===== TOP NAV ===== */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Reduced padding */
+    background: #000; /* Black navbar */
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.top-nav .nav-logo {
+    font-weight: 800;
+    font-size: 1.5rem; /* Slightly smaller logo */
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.top-nav .nav-links a,
+.top-nav .nav-links span {
+    margin-left: 15px; /* slightly reduced spacing */
+    font-weight: 600;
+    padding: 5px 10px; /* smaller padding */
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    color: #fff; /* Links are white */
+    position: relative;
+}
+
+.top-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #4f46e5; /* underline color */
+    transition: width 0.3s ease;
+}
+
+.top-nav .nav-links a:hover::after {
+    width: 100%;
+}
+
+.top-nav .nav-links a:hover {
+    color: #4f46e5; /* link hover color */
+}
+
+.top-nav .nav-links .active {
+    background: #4f46e5; /* active background */
+    color: #fff; /* active text color */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== RESPONSIVE NAV ===== */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 15px; /* further reduce for mobile */
+    }
+    .top-nav .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 6px;
+    }
+}
+
+

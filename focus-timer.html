@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyHub | Focus Timer</title>
+  <link rel="stylesheet" href="focus-timer.css">
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-logo">DailyHub</div>
+  <nav class="top-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="smarttasks.html">Smart Tasks</a>
+    <a href="utilities.html" class="active">Utilities</a>
+    <a href="learn-play.html">Play & learn</a>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside class="side-nav">
+    <h3>Utilities</h3>
+    <a href="calculator.html">🧮 Calculator</a>
+    <a href="notes.html">📝 Notes</a>
+    <a href="focus-timer.html" class="active">⏱ Focus Timer</a>
+    <a href="percentage.html">📊 Percentage</a>
+    <a href="personality-tracker.html">🧩 Personality Tracker</a>
+    <a href="universal-calculator.html">📲 Universal calculator</a>
+  </aside>
+
+  <main class="main">
+    <header class="hero-section">
+      <h1>Stay Productive</h1>
+      <p>Deep work is the superpower of the 21st century.</p>
+    </header>
+
+    <div class="dashboard-grid">
+      <div class="card setup-card">
+        <h3>Set Duration</h3>
+        <div class="time-inputs">
+          <div class="input-group">
+            <input type="number" id="hours" placeholder="00">
+            <label>Hours</label>
+          </div>
+          <span class="separator">:</span>
+          <div class="input-group">
+            <input type="number" id="minutes" placeholder="00">
+            <label>Minutes</label>
+          </div>
+          <span class="separator">:</span>
+          <div class="input-group">
+            <input type="number" id="seconds" placeholder="00">
+            <label>Seconds</label>
+          </div>
+        </div>
+        <button id="startBtn" class="primary-btn">Start Session</button>
+      </div>
+
+      <div class="card timer-card">
+        <div class="timer-wrapper">
+          <svg class="progress-ring" width="180" height="180">
+            <circle class="progress-ring__circle" stroke-width="10" fill="transparent" r="80" cx="90" cy="90"/>
+          </svg>
+          <div id="timerDisplay">00:00:00</div>
+        </div>
+        <div class="controls">
+          <button id="pauseBtn">Pause</button>
+          <button id="resetBtn" class="outline-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="card tip-card">
+        <div class="tip-header">
+          <span class="icon">💡</span>
+          <h3>Focus Insight</h3>
+        </div>
+        <p id="focusTip">Prepare your environment, silence your phone, and dive in.</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<audio id="alarmAudio" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+
+<script src="focus-timer.js"></script>
+</body>
+</html>

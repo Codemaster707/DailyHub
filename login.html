@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailyHub | Premium Access</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+<div class="glow-bg"></div>
+
+<div class="auth-card">
+    <div class="brand">
+        <div class="logo-icon">
+            <i class="ph-fill ph-cube"></i>
+        </div>
+        <h1>DailyHub</h1>
+        <p>Your digital workspace, unified.</p>
+    </div>
+
+    <div id="method-selector" class="fade-in">
+        <button class="choice-card google-btn" onclick="showMethod('google')">
+            <i class="ph-bold ph-google-logo"></i>
+            <span>Continue with Google</span>
+        </button>
+        
+        <div class="divider"><span>or</span></div>
+
+        <button class="choice-card email-trigger" onclick="showMethod('email')">
+            <i class="ph-bold ph-envelope"></i>
+            <span>Login with Email</span>
+        </button>
+    </div>
+
+    <div id="email-form" class="method-form hidden">
+        <button class="back-btn" onclick="resetUI()">
+            <i class="ph ph-caret-left"></i> Back
+        </button>
+        <div class="input-stack">
+            <div class="input-field">
+                <i class="ph ph-user"></i>
+                <input type="email" id="email" placeholder="Email address">
+            </div>
+            <div class="input-field">
+                <i class="ph ph-lock"></i>
+                <input type="password" id="password" placeholder="Password">
+            </div>
+        </div>
+        <button class="main-btn login-btn" onclick="login()">Sign In</button>
+        
+        <div class="divider"><span>New here?</span></div>
+        
+        <button class="main-btn signup-btn" onclick="signUp()">Create Account</button>
+    </div>
+
+    <p id="msg"></p>
+</div>
+
+<script type="module" src="login.js"></script>
+<script>
+    function showMethod(method) {
+        if(method === 'google') {
+            window.googleLogin(); 
+        } else {
+            document.getElementById('method-selector').classList.add('hidden');
+            const form = document.getElementById(method + '-form');
+            form.classList.remove('hidden');
+            form.classList.add('slide-up');
+        }
+    }
+
+    function resetUI() {
+        const forms = document.querySelectorAll('.method-form');
+        forms.forEach(f => {
+            f.classList.add('hidden');
+            f.classList.remove('slide-up');
+        });
+        document.getElementById('method-selector').classList.remove('hidden');
+        document.getElementById('msg').innerText = "";
+    }
+</script>
+</body>
+</html>

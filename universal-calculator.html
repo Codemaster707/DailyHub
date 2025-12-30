@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Calculator | DailyHub</title>
+  <link rel="stylesheet" href="utilities.css">
+  <link rel="stylesheet" href="universal-calculator.css">
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-logo">DailyHub</div>
+  <nav class="top-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="smarttasks.html">Smart Tasks</a>
+    <a href="utilities.html">Utilities</a>
+    <a href="learn-play.html">Play & learn</a>
+    <span class="active">Universal Calculator</span>
+  </nav>
+</header>
+
+<div class="utilities-layout">
+
+  <aside class="side-nav">
+    <h3>Utilities</h3>
+    <a href="calculator.html">🧮 Calculator</a>
+    <a href="notes.html">📝 Notes</a>
+    <a href="focus-timer.html">⏱ Focus Timer</a>
+    <a href="percentage.html">📊 Percentage</a>
+    <a href="personality-tracker.html">🧠 Personality Tracker </a>
+    <a href="universal-calculator.html" class="active">📲 Universal Calculator</a>
+  </aside>
+
+  <main class="utilities-content">
+    <div class="glass-card">
+        <h1>Universal Calc</h1>
+        <p class="subtitle">Quick • Simple • Beautiful</p>
+
+        <select id="mode" onchange="changeMode()">
+          <option value="">Select Category...</option>
+          <option value="unit">Unit Conversion</option>
+          <option value="age">Age Calculator</option>
+          <option value="interest">Interest Calculator</option>
+          <option value="tax">Tax / GST</option>
+        </select>
+
+        <div id="inputs"></div>
+
+        <button onclick="calculate()">GET RESULT</button>
+
+        <div id="result" class="result-box" style="display:none;"></div>
+    </div>
+  </main>
+
+</div>
+
+<script src="universal-calculator.js"></script>
+</body>
+</html>

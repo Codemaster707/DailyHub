@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personality Tracker | DailyHub</title>
+  <link rel="stylesheet" href="utilities.css">
+  <link rel="stylesheet" href="personality-tracker.css">
+</head>
+<body>
+
+<header class="top-nav">
+    <div class="nav-logo">DailyHub</div>
+    <nav class="top-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="timetable.html">Timetable</a>
+        <a href="smarttasks.html">Smart Tasks</a>
+        <a href="utilities.html">Utilities</a>
+        <a href="learn-play.html">Play & learn</a>
+        <span class="active">Personality Tracker</span>
+    </nav>
+</header>
+
+<div class="utilities-layout">
+
+    <aside class="side-nav">
+        <h3>Utilities</h3>
+        <a href="calculator.html">🧮 Calculator</a>
+        <a href="notes.html">📝 Notes</a>
+        <a href="focus-timer.html">⏱ Focus Timer</a>
+        <a href="percentage.html">📊 Percentage</a>
+        <a href="personality-tracker.html" class="active">🧩 Personality Tracker</a>
+	<a href="universal-calculator.html">📲 Universal calculator</a>
+    </aside>
+
+    <main class="utilities-content">
+
+        <section class="tracker-hero">
+            <h1>Personality Tracker</h1>
+            <p>Discover your personality type and get tips to improve or maintain it!</p>
+        </section>
+
+        <div class="progress-bar">
+            <div id="progress" style="width:0%"></div>
+        </div>
+
+        <section id="question-section"></section>
+
+        <section id="result-section" style="display:none;">
+            <div class="result-card" id="result-card"></div>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="personality-tracker.js"></script>
+</body>
+</html>

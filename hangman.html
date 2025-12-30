@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyHub | Hangman</title>
+  <link rel="stylesheet" href="hangman.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-logo">DailyHub</div>
+  <nav class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="timetable.html">Timetable</a>
+    <a href="smarttasks.html">Smart Tasks</a>
+    <a href="utilities.html">Utilities</a>
+    <a href="learn-play.html">🎯 Play & Learn</a>
+    <span class="active">😵 Hangman</span>
+  </nav>
+</header>
+
+<div class="main-layout">
+  <aside class="side-nav">
+    <div class="side-header">Arcade Menu</div>
+    <nav class="side-links">
+      <a href="trivia.html" class="side-item">🔥 Trivia Quest</a>
+      <a href="word-scramble.html" class="side-item">🔠 Word Scramble</a>
+      <a href="math-challenge.html" class="side-item">➕ Math Challenge</a>
+      <a href="memory-game.html" class="side-item">🧠 Memory Match</a>
+      <a href="hangman.html" class="side-item active">😵 Hangman</a>
+      <a href="tic-tac-toe.html" class="side-item">⭕ Tic Tac Toe</a>
+    </nav>
+  </aside>
+
+  <main class="quiz-content">
+    <section id="level-section" class="level-selection">
+      <h1>Hangman Challenge 😵</h1>
+      <p>Save the stickman by guessing the hidden words!</p>
+      
+      <div class="levels-grid">
+        <div class="level-card" onclick="startGame('easy')">
+          <h2>🟢 Easy</h2>
+          <p>Common words<br>Full 6 lives • 10 Points</p>
+          <button class="start-btn">Start Easy</button>
+        </div>
+        <div class="level-card" onclick="startGame('medium')">
+          <h2>🟡 Medium</h2>
+          <p>Standard dictionary<br>4 lives • 50 Points</p>
+          <button class="start-btn">Start Medium</button>
+        </div>
+        <div class="level-card" onclick="startGame('hard')">
+          <h2>🔴 Hard</h2>
+          <p>Obscure terms<br>2 lives only • 100 Points</p>
+          <button class="start-btn">Start Hard</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="quiz-section" style="display:none;">
+      <div class="quiz-card">
+        <div class="card-meta">
+          <span id="score-pill">🏆 Score: 0</span>
+          <div class="timer-pill" id="lives-pill">Lives: 6</div>
+        </div>
+        <div class="hangman-display">
+          <svg height="250" width="200" class="hangman-svg">
+            <line x1="20" y1="230" x2="180" y2="230" />
+            <line x1="50" y1="230" x2="50" y2="20" />
+            <line x1="50" y1="20" x2="130" y2="20" />
+            <line x1="130" y1="20" x2="130" y2="50" />
+            <circle id="head" cx="130" cy="70" r="20" class="part" />
+            <line id="body" x1="130" y1="90" x2="130" y2="150" class="part" />
+            <line id="arm-l" x1="130" y1="110" x2="100" y2="130" class="part" />
+            <line id="arm-r" x1="130" y1="110" x2="160" y2="130" class="part" />
+            <line id="leg-l" x1="130" y1="150" x2="100" y2="180" class="part" />
+            <line id="leg-r" x1="130" y1="150" x2="160" y2="180" class="part" />
+          </svg>
+        </div>
+        <p id="hintText" style="color: #00d2ff; font-weight: 700; font-size: 1.1rem; margin-bottom: 10px;">Hint: Loading...</p>
+        <div id="wordDisplay" class="hangman-word">_ _ _ _ _</div>
+        
+        <div id="keyboard" class="keyboard">
+          </div>
+
+        <div style="margin-top: 20px;">
+            <button onclick="location.reload()" class="start-btn" style="background: rgba(0,0,0,0.3); border: 1px solid white;">← Change Difficulty</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="hangman.js"></script>
+</body>
+</html>
