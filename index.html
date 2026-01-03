@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">   
-    <title>DailyHub – One Hub for Daily Life</title>
+    <meta charset="UTF-8">
+    <title>DailyHub – Student Productivity Hub</title>
 
-    <!-- ✅ MOBILE FIX -->
+    <!-- ✅ Mobile Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
@@ -15,47 +15,69 @@
     <div class="logo">DailyHub</div>
     <nav>
         <a href="#features">Features</a>
-        <a href="#about">About</a>
+        <a href="#why">Why</a>
         <a href="#get-started" class="btn" id="getStartedNav">Get Started</a>
     </nav>
 </header>
 
+<!-- 🔥 HERO -->
 <section class="hero" id="home">
-    <h1>Organize Your Day.<br>Save Time. Stay Ahead.</h1>
-    <p>DailyHub brings tasks, reminders, info, and fun learning into one smart dashboard.</p>
-    <button class="primary-btn" id="startDayBtn">Start Your Day</button>
+    <h1>
+        One Dashboard for Every Student
+    </h1>
+    <p class="hero-sub">
+        Notes • Focus Timer • Calculator • Smart Utilities  
+        <br>All in one clean, simple place.
+    </p>
+
+    <button class="primary-btn" id="startDayBtn">
+        Start Free with Google
+    </button>
+
+    <p class="trust-text">
+        ✔ Free to use • ✔ No ads • ✔ You control your data
+    </p>
 </section>
 
-<section class="problems" id="about">
+<!-- ❓ WHY -->
+<section class="problems" id="why">
     <h2>Why DailyHub?</h2>
     <div class="problem-grid">
-        <div class="card">Too many apps for daily tasks</div>
-        <div class="card">Wasting time searching for info</div>
-        <div class="card">Productivity feels boring</div>
+        <div class="card">📱 Too many apps for small tasks</div>
+        <div class="card">⏳ Time wasted switching between tools</div>
+        <div class="card">😴 Productivity feels boring</div>
     </div>
 </section>
 
+<!-- ⭐ FEATURES -->
 <section class="features" id="features">
-    <h2>What You Get</h2>
+    <h2>What You Can Do</h2>
     <div class="feature-grid">
         <div class="feature-card">
-            <h3>📝 Tasks & Reminders</h3>
-            <p>Manage your day with simple checklists.</p>
+            <h3>📝 Smart Notes</h3>
+            <p>Write, save, and organize notes securely.</p>
         </div>
+
         <div class="feature-card">
-            <h3>⚡ Quick Utilities</h3>
-            <p>Small tools that save big time.</p>
+            <h3>⏱ Focus Timer</h3>
+            <p>Stay focused using simple study timers.</p>
         </div>
+
         <div class="feature-card">
-            <h3>🎯 Learn & Play</h3>
-            <p>Quizzes and challenges that sharpen your mind.</p>
+            <h3>⚡ Quick Tools</h3>
+            <p>Calculator and utilities that save time.</p>
         </div>
     </div>
 </section>
 
+<!-- 🚀 CTA -->
 <section class="cta" id="get-started">
-    <h2>Your Day Deserves One Hub</h2>
-    <button class="secondary-btn" id="joinBtn">Join DailyHub</button>
+    <h2>Start Your First Productive Day</h2>
+    <p>No setup. No confusion. Just sign in and begin.</p>
+
+    <button class="secondary-btn" id="joinBtn">
+        Get Started Now
+    </button>
 </section>
 
 <!-- 🔁 Button routing -->
@@ -73,6 +95,8 @@
     window.location.href = "login.html";
   };
 </script>
+
+<!-- 🔐 Firebase Auth -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from 
@@ -92,12 +116,10 @@ const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    // logged-in users skip homepage
     window.location.replace("dashboard.html");
   }
 });
 </script>
+
 </body>
 </html>
-
-
