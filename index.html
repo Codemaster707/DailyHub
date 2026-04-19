@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DailyHub – Student Productivity Hub</title>
-    <meta name="google-site-verification" content="-Rr0H12OZqS17K1Hrht2J7MpGrVMRteSj4p66edaTaE" />
-    <!-- ✅ Mobile Responsive -->
+    <title>DailyHub – Elite Mode</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- ✅ Correct CSS Reference -->
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
@@ -20,26 +22,24 @@
     </nav>
 </header>
 
-<!-- 🔥 HERO -->
-<section class="hero" id="home">
-    <h1>
-        One Dashboard for Every Student
-    </h1>
+<!-- HERO -->
+<section class="hero">
+    <h1>Discipline Builds Legends</h1>
     <p class="hero-sub">
         Notes • Focus Timer • Calculator • Smart Utilities  
-        <br>All in one clean, simple place.
+        <br>All in one powerful system.
     </p>
 
     <button class="primary-btn" id="startDayBtn">
-        Start Free with Google
+        Enter DailyHub
     </button>
 
     <p class="trust-text">
-        ✔ Free to use • ✔ No ads • ✔ You control your data
+        Free • No Ads • Built for Serious Growth
     </p>
 </section>
 
-<!-- ❓ WHY -->
+<!-- WHY -->
 <section class="problems" id="why">
     <h2>Why DailyHub?</h2>
     <div class="problem-grid">
@@ -49,9 +49,9 @@
     </div>
 </section>
 
-<!-- ⭐ FEATURES -->
+<!-- FEATURES -->
 <section class="features" id="features">
-    <h2>What You Can Do</h2>
+    <h2>Core Tools</h2>
     <div class="feature-grid">
         <div class="feature-card">
             <h3>📝 Smart Notes</h3>
@@ -70,57 +70,30 @@
     </div>
 </section>
 
-<!-- 🚀 CTA -->
+<!-- CTA -->
 <section class="cta" id="get-started">
-    <h2>Start Your First Productive Day</h2>
-    <p>No setup. No confusion. Just sign in and begin.</p>
+    <h2>Start Your First Powerful Day</h2>
+    <p>No setup. No confusion. Just begin.</p>
 
     <button class="secondary-btn" id="joinBtn">
         Get Started Now
     </button>
 </section>
 
-<!-- 🔁 Button routing -->
 <script>
-  document.getElementById("startDayBtn").onclick = () => {
+document.getElementById("startDayBtn").onclick = () => {
     window.location.href = "login.html";
-  };
-
-  document.getElementById("joinBtn").onclick = () => {
-    window.location.href = "login.html";
-  };
-
-  document.getElementById("getStartedNav").onclick = (e) => {
-    e.preventDefault();
-    window.location.href = "login.html";
-  };
-</script>
-
-<!-- 🔐 Firebase Auth -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, onAuthStateChanged } from 
-"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBxUwx13V37k1wLZstt_-8DnbAsq5SlTeE",
-  authDomain: "dailyhub-d16c8.firebaseapp.com",
-  projectId: "dailyhub-d16c8",
-  storageBucket: "dailyhub-d16c8.firebasestorage.app",
-  messagingSenderId: "430767248900",
-  appId: "1:430767248900:web:c334a52d3ed147711dc751"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+document.getElementById("joinBtn").onclick = () => {
+    window.location.href = "login.html";
+};
 
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    window.location.replace("dashboard.html");
-  }
-});
+document.getElementById("getStartedNav").onclick = (e) => {
+    e.preventDefault();
+    window.location.href = "login.html";
+};
 </script>
 
 </body>
 </html>
-
